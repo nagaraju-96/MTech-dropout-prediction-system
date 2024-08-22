@@ -1,0 +1,134 @@
+<html>
+	<head>
+	<title> Dropout Prediction System </title>
+  <script language="javascript"> 	
+		function validate()
+		{
+			var nam = document.f1.name.value; 
+			if(nam=="")
+			{
+				alert("Please enter name"); 
+				document.f1.name.focus; 
+				return false;
+			}
+			var dom = document.f1.domain.value; 
+			if(dom=="")
+			{
+				alert("Please enter Domain"); 
+				document.f1.domain.focus;
+				return false;
+			}
+			var marks =document.f1.marks.value; 
+			if(marks=="")
+			{
+				alert("Please enter youe marks"); 
+				document.f1.marks.focus;
+				return false;
+			}
+      if (isNaN(marks) ) {
+        document.getElementsByName("numberText");
+        alert("Please enter valid marks"); 
+				document.f1.marks.focus;
+         return false;
+      }
+      m=parseInt(marks)
+      if(m>100 || m<0){
+        alert("Please enter valid marks"); 
+				document.f1.marks.focus;
+         return false;
+      }
+			var inc =document.f1.income.value; 
+		  if(inc=="")
+			{
+				alert("Please enter youe Income:"); 
+				document.f1.income.focus;
+				return false;
+			}
+      if (isNaN(inc) ) {
+        document.getElementsByName("numberText");
+        alert("Please enter valid income:"); 
+				document.f1.income.focus;
+         return false;
+      }
+      m=parseInt(inc)
+      if(m<10000){
+        alert("Please enter valid income"); 
+				document.f1.income.focus;
+         return false;
+      }
+    }
+		</script>
+	<style>
+ body {
+  font-family: Arial;
+  
+  margin: 0;
+}
+.header {
+  padding: 30px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+.content {padding:20px;
+  
+}
+
+.box{
+	
+  background:white;
+  width:300px;
+  border-radius:6px;
+  margin: 0 auto 0 auto;
+  padding:0px 30px 50px 30px;
+  border: rgba(2, 2, 119, 0.178) 4px solid; 
+}
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.button{
+  background-color: #4CAF50;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  font-family: 'Times New Roman', Times, serif;
+}
+.email{
+  background:#ecf0f1;
+  border: #ccc 1px solid;
+  border-bottom: #ccc 2px solid;
+  padding: 8px;
+  width:250px;
+  color:#AAAAAA;
+  margin-top:10px;
+  font-size:1em;
+  border-radius:4px;
+}
+</style>
+</head>
+  <body style="background-image:url('homeimg.jpg');" >
+    <div class="header">
+      <h2>Predictive Model to Reduce Student Dropouts in M.Tech using Decision Tree.</h2>
+     </div>
+  
+    <div class="content">
+	  <center>
+	    <form name="f1" action="/home" method="POST"  onsubmit="javascript:return validate()" >
+	      
+        <div class="box">
+		      <h1>Student Details</h1>
+              <input type="text" name="name" value="StudentName" onFocus="field_focus(this, 'name');" onblur="field_blur(this, 'name');" class="email" /></divbr/>
+          		<input type="text" name="domain" value="Domain" onFocus="field_focus(this, 'domain');" onblur="field_blur(this, 'domain');" class="email" /><br/>
+              <input type="text" name="marks" value="Btech_marks_in_above_domain" onFocus="field_focus(this, 'marks');" onblur="field_blur(this, 'marks');" class="email" /><br/>
+              <input type="text" name="income" value="Income" onFocus="field_focus(this, 'income');" onblur="field_blur(this, 'income');" class="email" /><br/><br/>
+          		<input type="submit" value="Predict" class="button">
+    		</div>
+    	</form>
+    </center>
+    </div>
+  </body>
+</html>
+ 
